@@ -1,12 +1,12 @@
 var object = {
   name: 'The Old',
   surname: 'Gods',
-  age: 3200,
+  age: 2000,
   petOwner: true,
+  carOwner: false,
 };
 
-console.warn(`Ma numesc xxx yyy si am xx ani.
-`);
+console.warn(`Ma numesc xxx yyy si am xx ani.`);
 
 console.log(
   'Ma numesc ' +
@@ -18,7 +18,7 @@ console.log(
     ' ' +
     object.age +
     ' ' +
-    'ani',
+    'ani.',
 );
 
 console.warn(
@@ -30,3 +30,9 @@ console.log((2023 - object.age).toString());
 console.warn(
   'Adauga o cheie noua de tip boolean cu numele petOwner (observa capitalizarea).',
 );
+
+console.log(
+  object.name + ' ' + object.surname + ' are ' + object.age + ' ani.',
+);
+
+console.log(object.name + ' s-a nascut in ' + (2023 - object.age) + '.');

@@ -62,3 +62,43 @@ console.log(
 );
 
 console.log(person.friends.steven.surname.length.toString());
+
+console.log((2023 - person.friends.steven.age).toString());
+
+console.log(
+  person.friends.steven.name +
+    ' este cu ' +
+    (person.friends.steven.age - person.friends.carol.age) +
+    ' ani mai mare decat ' +
+    person.friends.carol.name +
+    '.',
+);
+
+console.log(
+  'Prietena mea ' +
+    person.friends.carol.name +
+    ' ' +
+    person.friends.carol.surname +
+    ' are ' +
+    person.friends.carol.age +
+    ' ani.',
+);
+
+console.log(
+  'Prietenii mei sunt:' +
+    ' ' +
+    person.friends.larry.name +
+    ', ' +
+    person.friends.carol.name +
+    ' si ' +
+    person.friends.steven.name +
+    '.',
+);
+
+console.log(person.friends.larry.surname.length.toString());
+
+console.log(
+  (
+    person.friends.steven.name.length - person.friends.carol.name.length
+  ).toString(),
+);
