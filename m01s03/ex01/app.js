@@ -36,3 +36,7 @@ console.log(
 );
 
 console.log(object.name + ' s-a nascut in ' + (2023 - object.age) + '.');
+
+// astea nu par a fi in cerinte dar am vrut sa inverzesc pixeltab
+console.log(object.name);
+console.log(object.age.toString());
