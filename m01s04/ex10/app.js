@@ -80,18 +80,26 @@ person.friends.forEach(function (friend, index, friends) {
 console.log(message);
 
 console.warn(
-  `Folosind forEach, afiseaza numarul total de ani pe care il au persoanele din arrayul
-   friends, doar daca au varsta mai mare decat 30 inclusiv folosind o propozitie de felul:
-    "Varstele insumate sunt: xxx."Folosind forEach, afiseaza suma anilor de nastere a persoanelor care au varsta impara.`,
+  `Afiseaza fraza: "Intre Dragos si Larry este o diferenta de xx ani. Intre Dragos si Steven... "`,
 );
+var message = '';
+person.friends.forEach(function (friend, index, friends) {
+  var ageDiff = person.age - friend.age;
+  var punctuation = friends.length - 1 === index ? '.' : '. ';
 
-var sumAge = 0;
-person.friends.forEach(function (age) {
-  if (age > 30) {
-    sumAge = sumAge + age;
-  }
-  console.log('Varstele insumate sunt: ' + sumAge);
+  message += `Intre ${person.name} si ${friend.name} este o diferenta de ${ageDiff} ani${punctuation}`;
 });
 
-console.warn(` Folosind forEach, afiseaza suma anilor de nastere a persoanelor care au varsta impara.
-`);
+console.log(message.trim());
+
+console.warn(
+  ` Folosind metoda reverse si apoi forEach, afiseaza in ordine inversa elementele arrayului skills.`,
+);
+
+// slice fara parametri creaza o clona
+person.skills
+  .slice()
+  .reverse()
+  .forEach(function (skill) {
+    console.log(skill);
+  });
