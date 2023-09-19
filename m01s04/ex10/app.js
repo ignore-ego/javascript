@@ -78,3 +78,20 @@ person.friends.forEach(function (friend, index, friends) {
   message += friend.name + ' ' + friend.surname + punctuation;
 });
 console.log(message);
+
+console.warn(
+  `Folosind forEach, afiseaza numarul total de ani pe care il au persoanele din arrayul
+   friends, doar daca au varsta mai mare decat 30 inclusiv folosind o propozitie de felul:
+    "Varstele insumate sunt: xxx."Folosind forEach, afiseaza suma anilor de nastere a persoanelor care au varsta impara.`,
+);
+
+var sumAge = 0;
+person.friends.forEach(function (age) {
+  if (age > 30) {
+    sumAge = sumAge + age;
+  }
+  console.log('Varstele insumate sunt: ' + sumAge);
+});
+
+console.warn(` Folosind forEach, afiseaza suma anilor de nastere a persoanelor care au varsta impara.
+`);

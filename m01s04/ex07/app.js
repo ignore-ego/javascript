@@ -21,7 +21,14 @@ var friends = [
   },
 ];
 
-// insert code here
+console.warn(
+  `Folosind o bucla for, afiseaza proprietatea surname a tuturor obiectelor din arrayul friends.`,
+);
+
+for (var i = 0; i < friends.length; i++) {
+  var friend = friends[i];
+  console.log(friend.surname);
+}
 
 console.warn(
   `Afiseaza numele complet inversat al tuturor prietenilor, insa o data ce l-ai gasit pe steven,
@@ -58,3 +65,38 @@ for (var i = 0; i < friends.length; i++) {
     friend.surname + ' ' + friend.name + ' are mai mult de 13 caractere.',
   );
 }
+
+console.warn(
+  `Folosind o bucla for, afiseaza proprietatea name a tuturor obiectelor din arrayul friends.`,
+);
+
+for (var i = 0; i < friends.length; i++) {
+  var friend = friends[i];
+  console.log(friend.name);
+}
+
+console.warn(`Afiseaza numele complet al tuturor prietenilor.`);
+for (var i = 0; i < friends.length; i++) {
+  var friend = friends[i];
+  console.log(friend.name + ' ' + friend.surname);
+}
+
+console.warn(
+  `Folosind keywordul break, afiseaza numele complet al prietenilor
+   dar opeste bucla la  primul surname care are numarul de caractere mai mare sau egal decat 9 si afiseaz-l intr-o propozitie de forma “M-am oprit la Nume Prenume.”.`,
+);
+
+for (var i = 0; i < friends.length; i++) {
+  var friend = friends[i];
+  var fullName = friend.surname + ' ' + friend.name;
+
+  if (friend.surname.length >= 9) {
+    console.log('M-am oprit la ' + fullName + '.');
+
+    break;
+  }
+
+  console.log(fullName);
+}
+
+// pixel tab nu e verde complet ca se contrazice cu cerinta 2
