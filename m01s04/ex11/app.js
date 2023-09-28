@@ -90,3 +90,60 @@ Object.keys(person.friends).forEach(function (friendKeyName) {
     `Diferenta de varsta intre ${friend.name} si ${person.name} este de ${ageDiff} ani.`,
   );
 });
+
+console.warn(
+  `Folosind Object.keys() pe proprietatea skills, afiseaza toate abilitatile din obiectul skills`,
+);
+
+const ability = Object.keys(person.skills);
+ability.forEach(function (skill) {
+  console.log(skill);
+});
+
+console.warn(`Prin aceeasi metoda, afiseaza o lista cu numele complet al prietenilor.
+`);
+
+const friendName = Object.keys(person.friends);
+friendName.forEach(function (name) {
+  const friend = person.friends[name];
+  const fullName = `${friend.name} ${friend.surname}`;
+  console.log(fullName);
+});
+
+console.warn(
+  `Afiseaza propozitia: “Prietenii mei sunt Larry Larryson, Steven Stevenson si Carol Carolson.” folosind Object.keys()`,
+);
+
+//  codul de mai jos e copiat de la cerinta 3 de la ex asta ca e mai usor asa :))) dar imi dadea pixeltab peste cap zicand ca person nu mai e declarat. era din cauza ca am folosit var cand am facut asta acu 2 sapt cu tine si eu incercam cu let si const ?
+var message = 'Prietenii mei sunt ';
+Object.keys(person.friends).forEach(function (
+  friendKeyName,
+  index,
+  friendKeyNames,
+) {
+  var friend = person.friends[friendKeyName];
+  var punctuation = ', ';
+
+  // last iteration
+  if (friendKeyNames.length - 1 === index) {
+    punctuation = '.';
+  }
+
+  // next to last iteration
+  if (friendKeyNames.length - 2 === index) {
+    punctuation = ' si ';
+  }
+
+  message += `${friend.name} ${friend.surname}${punctuation}`;
+});
+
+console.log(message);
+
+console.warn(
+  `Folosind bucla, afiseaza mai multe propozitii (cate una per console.log()) care sa afiseze: “Larry are xx ani. Steven are …”`,
+);
+
+Object.keys(person.friends).forEach(function (friendKeyName) {
+  var friend = person.friends[friendKeyName];
+  console.log(`${friend.name} are ${friend.age} ani.`);
+});
