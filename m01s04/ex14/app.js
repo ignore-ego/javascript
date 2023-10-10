@@ -97,15 +97,15 @@ console.warn(
 
 // am incercat aici sa aplic niste cod de la ex 11 ce ne-ai aratat dar nu imi iese cu "si" la final
 let message = `Am `;
-person.pets.forEach(function (pet, index) {
+person.pets.forEach(function (pet, index, pets) {
   var punctuation = ', ';
   var punctuation = ', ';
 
-  if (pet.length - 1 === index) {
+  if (pets.length - 1 === index) {
     punctuation = '.';
   }
 
-  if (pet.length - 2 === index) {
+  if (pets.length - 2 === index) {
     punctuation = ' si ';
   }
 
