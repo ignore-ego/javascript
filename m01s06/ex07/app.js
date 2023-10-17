@@ -1,0 +1,1 @@
+const myGuess = 47;
