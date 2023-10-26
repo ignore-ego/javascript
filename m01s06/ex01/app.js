@@ -3,6 +3,8 @@ const car = {
   color: 'black',
   wheels: 4,
   speed: 50,
+  topSpeed: 160,
+  topReverseSpeed: -50,
   isTrunkOpen: false,
   areLightsOn: false,
 
@@ -39,4 +41,31 @@ const car = {
       self.turnLightsOff();
     }, 2000);
   },
+
+  stop: function () {
+    this.speed = 0;
+  },
+
+  setSpeed: function (newSpeed) {
+    if (newSpeed > this.topReverseSpeed && newSpeed <= this.speed) {
+      this.speed = newSpeed;
+    }
+  },
 };
+
+console.warn(
+  `Afiseaza propozitia: "Masina era marca make si se deplasa cu speed km/h.".`,
+);
+
+console.log(`Masina era marca ${car.make} si se deplasa cu ${car.speed} km/h`);
+
+console.warn(`Decelereaza masina cu 5 unitati apoi afisaza propozitia: "Viteza noua este speed km/h".
+`);
+
+car.decelerate();
+car.decelerate();
+car.decelerate();
+car.decelerate();
+car.decelerate();
+
+console.log(`Viteza noua este ${car.speed} km/h.`);

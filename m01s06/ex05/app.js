@@ -2,6 +2,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     const showButton = document.querySelector('#showButton');
     const toggleEventButton = document.querySelector('#toggleEventButton');
+    const removeButtons = document.querySelector('#removeButtons');
     let eventBound = true;
 
     function showAlert() {
@@ -24,6 +25,14 @@
         this.innerText = 'Opreste afisarea';
         showMessage('Alerta va fi afisata');
         eventBound = true;
+      }
+    });
+
+    removeButtons.addEventListener('click', function () {
+      const confirm = window.confirm('Sigur vrei sa stergi ?');
+      if (confirm === true) {
+        showButton.remove();
+        toggleEventButton.remove();
       }
     });
 
