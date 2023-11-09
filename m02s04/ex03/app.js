@@ -16,13 +16,29 @@ const axisMotionMap = {
   N: {
     y: -1,
   },
+  SE: {
+    x: 1,
+    y: 1,
+  },
+  SW: {
+    x: -1,
+    y: 1,
+  },
+  NE: {
+    x: 1,
+    y: -1,
+  },
+  NW: {
+    x: -1,
+    y: -1,
+  },
 };
 
 const step = 30;
 const keysMap = {
-  // ArrowUp:
+  ArrowUp: axisMotionMap.N,
   ArrowRight: axisMotionMap.E,
-  // ArrowLeft:
+  ArrowLeft: axisMotionMap.W,
   ArrowDown: axisMotionMap.S,
 };
 // game state (desi nu e joc)
@@ -80,5 +96,13 @@ function updateHeroPosition(axes) {
 
   if (heroState.y >= stage.clientHeight - hero.clientHeight) {
     heroState.y = stage.clientHeight - hero.clientHeight;
+  }
+
+  if (heroState.x <= 0) {
+    heroState.x = 0;
+  }
+
+  if (heroState.y <= 0) {
+    heroState.y = 0;
   }
 }
