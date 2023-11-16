@@ -68,3 +68,19 @@ bike.setSpeed(2);
 bike.decelerate();
 bike.decelerate();
 bike.decelerate();
+
+class Tricycle extends Vehicle {
+  constructor(make, color, speed, topSpeed, topReverseSpeed) {
+    super(make, color, 3, speed, topSpeed, topReverseSpeed);
+  }
+}
+
+const trike = new Tricycle('Tryke', 'red', 2, 9, -2);
+trike.setSpeed(0);
+
+trike.decelerate();
+trike.decelerate();
+trike.decelerate();
+
+// cnad punem -10 viteza se limiteaza la -2 (maximum de reverse setat pt ea)
+trike.setSpeed(-10);
